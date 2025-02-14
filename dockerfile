@@ -1,4 +1,4 @@
-FROM rust:slim AS build
+FROM rust:alpine AS build
 
 WORKDIR src
 COPY . .
