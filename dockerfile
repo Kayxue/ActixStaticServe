@@ -1,4 +1,4 @@
-FROM rust:slim AS build
+FROM ekidd/rust-musl-builder AS build
 
 WORKDIR /src
 COPY . .
