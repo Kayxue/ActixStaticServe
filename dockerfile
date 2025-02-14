@@ -5,7 +5,7 @@ COPY . .
 RUN USER=root apk add libc-dev
 RUN cargo build --release
 
-FROM busybox:musl
+FROM alpine:latest
 WORKDIR app
 COPY --from=build /src/target/release ./release
 COPY --from=build /src/public ./public
