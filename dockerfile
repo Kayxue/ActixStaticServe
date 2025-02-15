@@ -7,9 +7,9 @@ RUN cargo build --release
 
 FROM busybox:musl
 WORKDIR app
-COPY --from=build /src/target/release/actixfuwariserve .
+COPY --from=build /src/target/release/ ./release
 COPY --from=build /src/public ./public
 
 EXPOSE 3000
 
-ENTRYPOINT ["./actixfuwariserve"]
+ENTRYPOINT ["./release/actixfuwariserve"]
