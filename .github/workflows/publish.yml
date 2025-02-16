@@ -8,7 +8,7 @@ jobs:
       packages: write
     steps:
       - name: Install Docker
-        run: 
+        run: |
           brew install --cask docker
           open -a Docker
       # - name: Prepare Colima
