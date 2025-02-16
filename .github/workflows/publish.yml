@@ -8,11 +8,11 @@ jobs:
       packages: write
     steps:
       - name: Install Docker
-        run: brew install --cask docker
-      # - name: Prepare Colima
-      #   run: |
-      #     brew install colima
-      #     colima start
+        run: brew install docker
+      - name: Prepare Colima
+        run: |
+          brew install colima
+          colima start
       # - name: Install Credential Helper and Compose
       #   run: |
       #     brew install docker-compose docker-credential-helper
@@ -23,7 +23,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build the hello-docker Docker image
+      - name: Build the Docker image
         run: |
           docker build . --tag ghcr.io/kayxue/actixfuwariserve:latest --no-cache
           docker push ghcr.io/kayxue/actixfuwariserve:latest
