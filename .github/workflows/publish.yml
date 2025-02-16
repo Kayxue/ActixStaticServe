@@ -16,6 +16,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the Docker image
         run: |
-          docker build . --tag ghcr.io/kayxue/actixfuwariserve:latest --no-cache
+          docker build . --tag ghcr.io/kayxue/actixfuwariserve:latest --no-cache --platform linux/amd64,linux/arm64
           docker push ghcr.io/kayxue/actixfuwariserve:latest
 
