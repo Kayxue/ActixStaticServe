@@ -8,14 +8,14 @@ jobs:
       packages: write
     steps:
       - name: Install Docker
-        run: brew install docker
-      - name: Prepare Colima
-        run: |
-          brew install colima
-          colima start
-      - name: Install Credential Helper and Compose
-        run: |
-          brew install docker-compose docker-credential-helper
+        run: brew install --cask docker
+      # - name: Prepare Colima
+      #   run: |
+      #     brew install colima
+      #     colima start
+      # - name: Install Credential Helper and Compose
+      #   run: |
+      #     brew install docker-compose docker-credential-helper
       - uses: actions/checkout@v4
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
