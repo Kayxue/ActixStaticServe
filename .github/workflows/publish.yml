@@ -10,7 +10,6 @@ jobs:
       - name: Install Docker
         run: |
           brew install --cask docker
-          open -a docker
       # - name: Prepare Colima
       #   run: |
       #     brew install colima
