@@ -15,21 +15,21 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build the Docker image
-        run: |
-          docker build . --tag ghcr.io/kayxue/blogbackend:latest --no-cache
-          docker push ghcr.io/kayxue/blogbackend:latest
+      # - name: Build the Docker image
+      #   run: |
+      #     docker build . --tag ghcr.io/kayxue/blogbackend:latest --no-cache
+      #     docker push ghcr.io/kayxue/blogbackend:latest
       
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v3
 
-      # - name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
       
-      # - name: Build and push
-      #   uses: docker/build-push-action@v6
-      #   with:
-      #     platforms: linux/amd64,linux/arm64
-      #     push: true
-      #     tags: ghcr.io/kayxue/blogbackend:latest
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/arm64
+          push: true
+          tags: ghcr.io/kayxue/blogbackend:latest
 
