@@ -7,9 +7,7 @@ RUN cargo build --release
 
 FROM scratch
 WORKDIR app
-COPY --from=build /src/target/release/blogbackend .
+COPY --from=build /src/target/release/actixstaticserve ./serve
 COPY --from=build /src/public ./public
 
 EXPOSE 3000
-
-ENTRYPOINT ["./blogbackend"]
