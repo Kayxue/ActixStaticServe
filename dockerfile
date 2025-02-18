@@ -10,3 +10,5 @@ WORKDIR /
 COPY --from=build /src/target/release/actixstaticserve ./serve
 
 EXPOSE 3000
+
+ENTRYPOINT ["./serve"]
