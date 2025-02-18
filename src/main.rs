@@ -5,7 +5,6 @@ use actix_web::{http::KeepAlive, App, HttpServer};
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| App::new().service(fs::Files::new("/", "./public").index_file("index.html")))
         .bind(("0.0.0.0", 3000))?
-        .keep_alive(KeepAlive::Os)
         .run()
         .await
 }
