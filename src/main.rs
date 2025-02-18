@@ -1,5 +1,5 @@
 use actix_files as fs;
-use actix_web::{http::KeepAlive, App, HttpServer};
+use actix_web::{App, HttpServer};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
