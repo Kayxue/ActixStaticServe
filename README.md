@@ -11,6 +11,4 @@ FROM ghcr.io/kayxue/actixstaticserve:latest
 WORKDIR /
 
 COPY ./public/ ./public/
-
-ENTRYPOINT ["./serve"]
 ```
