@@ -12,3 +12,5 @@ WORKDIR /
 
 COPY ./public/ ./public/
 ```
+## Contribution
+Contributions are welcome, and please follow [Code of conduct](https://www.rust-lang.org/policies/code-of-conduct)
