@@ -1,4 +1,5 @@
-FROM rust:alpine AS build
+ARG BUILDPLATFORM
+FROM --platform=$BUILDPLATFORM rust:alpine AS build
 WORKDIR src
 COPY . .
 
